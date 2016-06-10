@@ -506,6 +506,12 @@ struct wpa_driver_scan_params {
 	  * maximum duration and the actual duration may be shorter.
 	  */
 	 unsigned int duration_mandatory:1;
+	/**
+	 * scan_width - Specify scan bandwidth.
+	 *
+	 * Specify a bandwidth at which to scan (5, 10, 20).  Zero means default.
+	 */
+	int scan_width;
 
 	/*
 	 * NOTE: Whenever adding new parameters here, please make sure
