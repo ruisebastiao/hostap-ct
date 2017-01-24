@@ -575,3 +575,7 @@ CONFIG_PEERKEY=y
 
 # Mesh Networking (IEEE 802.11s)
 #CONFIG_MESH=y
+
+
+# Enable some testing options code?  Not intended for production code.
+#CONFIG_TESTING_OPTIONS=y
