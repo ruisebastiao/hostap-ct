@@ -460,6 +460,16 @@ struct beacon_rep_data {
 	struct bitfield *eids;
 };
 
+#ifdef CONFIG_TESTING_OPTIONS
+struct delayed_msg {
+	struct dl_list list;
+
+	u8 msg[2000];
+	u8 src_addr[ETH_ALEN];
+	size_t msg_len;
+	struct os_reltime txtime; /* can transmit on or after this time */
+};
+#endif
 
 /**
  * struct wpa_supplicant - Internal data for wpa_supplicant interface
@@ -1051,6 +1061,10 @@ struct wpa_supplicant {
 	unsigned int reject_btm_req_reason;
 	unsigned int p2p_go_csa_on_inv:1;
 	unsigned int ignore_assoc_disallow:1;
+
+	unsigned int delays_disabled:1;
+	struct dl_list delayed_eapol_list; /* list head: struct delayed_eapol_msg */
+
 #endif /* CONFIG_TESTING_OPTIONS */
 
 	struct wmm_ac_assoc_data *wmm_ac_assoc_info;
