@@ -343,7 +343,8 @@ int eapol_sm_get_eap_proxy_imsi(struct eapol_sm *sm, char *imsi, size_t *len);
 
 #ifdef CONFIG_TESTING_OPTIONS
 void eapol_apply_corruptions(struct eapol_sm *sm, u16 corrupt_eapol_id_resp,
-			     u16 corrupt_eapol_other_resp);
+			     u16 corrupt_eapol_other_resp, u16 dup_eapol_id_resp,
+			     u16 dup_eapol_other_resp);
 #endif
 
 #else /* IEEE8021X_EAPOL */

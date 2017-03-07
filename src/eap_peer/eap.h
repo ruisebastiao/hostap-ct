@@ -360,7 +360,8 @@ struct wpabuf * eap_peer_build_erp_reauth_start(struct eap_sm *sm, u8 eap_id);
 void eap_peer_finish(struct eap_sm *sm, const struct eap_hdr *hdr, size_t len);
 
 #ifdef CONFIG_TESTING_OPTIONS
-void eap_apply_corruptions(struct eap_sm *sm, u16 corrupt_eapol_id_resp);
+void eap_apply_corruptions(struct eap_sm *sm, u16 corrupt_eapol_id_resp,
+			   u16 dup_eapol_id_resp);
 #endif
 
 #endif /* IEEE8021X_EAPOL */
